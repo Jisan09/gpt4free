@@ -44,4 +44,4 @@ class Completion:
     @staticmethod
     def _submit_request(session: requests.Session, payload: dict) -> CoCalcResponse:
         response = session.post('https://cocalc.com/api/v2/openai/chatgpt', json=payload).json()
-        return CoCalcResponse(text=response['output'], status=response['success'])
+        return CoCalcResponse(text=response, status=response['success'])
